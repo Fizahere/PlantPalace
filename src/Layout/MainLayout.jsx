@@ -9,7 +9,7 @@ const MainLayout = () => {
   return (
     <>
       <Box
-        height={"100vh"}
+        height={"113vh"}
         bg={colorMode === "light" ? Colors.WHITE : Colors.DARKTHEME}
       >
         <Box px={{base:10,md:20}}>

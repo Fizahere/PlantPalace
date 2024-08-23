@@ -1,7 +1,5 @@
-/* body {
-  height: 100vh;
+body {
+  /* height: max-content; */
   margin: 0;
-  overflow: hidden;
-  padding: 0px 40px;
-  background-color: ;
-} */
+  padding: 0px;
+}
