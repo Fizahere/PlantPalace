@@ -21,12 +21,7 @@ function Navbar() {
 
   return (
     <>
-      <Box
-        _dark={{
-          bg: Colors.DARKTHEME,
-        }}
-        px={4}
-      >
+      <Box>
         <Flex h={16} alignItems="center" justifyContent="space-between">
           <IconButton
             size="md"
@@ -41,7 +36,7 @@ function Navbar() {
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <Box color="white" fontWeight="bold">
+          <Box fontWeight="bold">
             Logo
           </Box>
           <HStack spacing={8} alignItems="center">
@@ -50,7 +45,7 @@ function Navbar() {
                 px={2}
                 py={1}
                 rounded="md"
-                _hover={{ textDecoration: "none", bg: "teal.600" }}
+                _hover={{ textDecoration: "none",}}
                 href="#"
               >
                 Home
@@ -59,7 +54,7 @@ function Navbar() {
                 px={2}
                 py={1}
                 rounded="md"
-                _hover={{ textDecoration: "none", bg: "teal.600" }}
+                _hover={{ textDecoration: "none",  }}
                 href="#"
               >
                 About
@@ -68,7 +63,7 @@ function Navbar() {
                 px={2}
                 py={1}
                 rounded="md"
-                _hover={{ textDecoration: "none", bg: "teal.600" }}
+                _hover={{ textDecoration: "none", }}
                 href="#"
               >
                 Feedback
@@ -77,7 +72,7 @@ function Navbar() {
                 px={2}
                 py={1}
                 rounded="md"
-                _hover={{ textDecoration: "none", bg: "teal.600" }}
+                _hover={{ textDecoration: "none", }}
                 href="#"
               >
                 Contact
