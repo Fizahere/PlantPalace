@@ -39,7 +39,7 @@ function Navbar() {
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <Box fontWeight="bold">Logo</Box>
+          <Box fontWeight="bold"><Icon as={App_Icons.LOGO} fontSize={30}/> Plant Palace</Box>
           <HStack spacing={8} alignItems="center">
             <HStack
               fontSize={15}

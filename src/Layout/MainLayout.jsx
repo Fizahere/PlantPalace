@@ -2,8 +2,8 @@ import React from "react";
 import { Box, useColorMode } from "@chakra-ui/react";
 import { Colors } from "../assets/constants/colors";
 import Navbar from "../components/Navbar";
-// import Home from "../pages/Home";
 import { Outlet } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const MainLayout = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -13,10 +13,10 @@ const MainLayout = () => {
         height={"auto"}
         bg={colorMode === "light" ? Colors.WHITE : Colors.DARKTHEME}
       >
-        <Box px={{base:10,md:20}}>
-        <Navbar />
-        {/* <Home/> */}
-        <Outlet/>
+        <Box px={{ base: 10, md: 20 }}>
+          <Navbar />
+          <Outlet />
+          <Footer />
         </Box>
       </Box>
     </>

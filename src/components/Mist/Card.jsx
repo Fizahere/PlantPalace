@@ -7,6 +7,9 @@ import {
   Heading,
   Text,
   Button,
+  Divider,
+  Flex,
+
 } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 // import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
@@ -26,7 +29,11 @@ function CustomCard() {
   const navigate = useNavigate();
   return (
     <>
-      <Card boxShadow={1} _dark={{bg:'transparent'}} maxW={{base:'xs',md:'xs'}}>
+      <Card
+       boxShadow={'0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'} 
+       _dark={{bg:'transparent'}} 
+       maxW={{base:'xs',md:'xs'}}
+       >
         <CardBody>
           <Image
             src={mainImage3}
@@ -35,12 +42,22 @@ function CustomCard() {
             width={"100%"}
             height={{base:'auto',md:'auto'}}
           />
+              <Divider
+              orientation="horizontal"
+              borderColor="inherit"
+              // width={"95px"}
+              borderWidth="1px"
+              mr={3}
+            />
           <Stack mt="6" spacing={{base:'1',md:'3'}}>
-            <Heading size={{base:'sm',md:'md'}} h={'35px'}>'Fiza</Heading>
-            <Text fontSize={{base:'12px',md:'1xl'}}>netflix</Text>
-            <Text color="blue.600" fontSize={{base:'12px',md:'1xl'}}>
-              200
+            <Flex justifyContent={'space-between'}>
+            <Heading size={{base:'sm',md:'md'}}>Cactus</Heading>
+            <Text mt={1} color="green" fontSize={{base:'12px',md:'1xl'}}>
+             $ 200
             </Text>
+            </Flex>
+            <Text fontSize={{base:'12px',md:'1xl'}}>Indoor Plant</Text>
+           
             <Button
             mt={{base:'1',md:'0'}}
             bg={Colors.THEMEBUTTON}

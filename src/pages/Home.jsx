@@ -79,6 +79,7 @@ const Home = () => {
                 _hover={{ bg: "transparent" }}
                 width={'150px'}
 fontSize={{base:'18px',sm:'12px',md:'18px'}}
+onClick={()=>navigate('/about-us')}
               >
                 More Details
               </Button>
