@@ -3,21 +3,24 @@ import {
   Box,
   Flex,
   HStack,
-  Link,
   IconButton,
   Button,
   useDisclosure,
   Stack,
+  // Link,
   Icon,
   useColorMode,
   Divider,
 } from "@chakra-ui/react";
 import { App_Icons } from "../assets/constants/icons";
 import { Colors } from "../assets/constants/colors";
+import { Link } from "react-router-dom";
+import Cart from "../pages/Cart";
 
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  const cartDrawer = useDisclosure();
 
   return (
     <>
@@ -36,17 +39,21 @@ function Navbar() {
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <Box fontWeight="bold">
-            Logo
-          </Box>
+          <Box fontWeight="bold">Logo</Box>
           <HStack spacing={8} alignItems="center">
-            <HStack as="nav" spacing={4} display={{ base: "none", md: "flex" }}>
+            <HStack
+              fontSize={15}
+              fontWeight={"400"}
+              as="nav"
+              spacing={4}
+              display={{ base: "none", md: "flex" }}
+            >
               <Link
                 px={2}
                 py={1}
                 rounded="md"
-                _hover={{ textDecoration: "none",}}
-                href="#"
+                _hover={{ textDecoration: "none" }}
+                to="/"
               >
                 Home
               </Link>
@@ -54,8 +61,8 @@ function Navbar() {
                 px={2}
                 py={1}
                 rounded="md"
-                _hover={{ textDecoration: "none",  }}
-                href="#"
+                _hover={{ textDecoration: "none" }}
+                to="/about-us"
               >
                 About
               </Link>
@@ -63,7 +70,7 @@ function Navbar() {
                 px={2}
                 py={1}
                 rounded="md"
-                _hover={{ textDecoration: "none", }}
+                _hover={{ textDecoration: "none" }}
                 href="#"
               >
                 Feedback
@@ -72,8 +79,8 @@ function Navbar() {
                 px={2}
                 py={1}
                 rounded="md"
-                _hover={{ textDecoration: "none", }}
-                href="#"
+                _hover={{ textDecoration: "none" }}
+                to="/contact-us"
               >
                 Contact
               </Link>
@@ -83,6 +90,11 @@ function Navbar() {
             <Button colorScheme="teal" variant="" size="sm" mr={3}>
               Login
             </Button>
+            <IconButton
+             icon={<Icon as={App_Icons.CART} fontSize={22}/>} 
+             onClick={cartDrawer.onOpen} 
+             bg={'transparent'}
+             />
             <Divider
               orientation="vertical"
               borderColor="inherit"
@@ -124,6 +136,7 @@ function Navbar() {
           </Box>
         ) : null}
       </Box>
+      <Cart disclosure={cartDrawer} />
     </>
   );
 }
