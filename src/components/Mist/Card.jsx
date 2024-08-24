@@ -19,7 +19,7 @@ import mainImage3 from "../../assets/images/mainImage3.jpg";
 function CustomCard(singlePlant) {
   const { id } = singlePlant;
   const { name } = singlePlant;
-//   const { image_thumbnail_path } = singlePlant;
+  const { image} = singlePlant;
   const { scientificName } = singlePlant;
   const { temperatureRange } = singlePlant;
   const { humidity } = singlePlant;
@@ -37,13 +37,15 @@ function CustomCard(singlePlant) {
        maxW={{base:'xs',md:'xs'}}
        >
         <CardBody>
-          <Image
-            src={mainImage3}
-            alt={'image_thumbnail_path'}
-            borderRadius="md"
-            width={"100%"}
-            height={{base:'auto',md:'auto'}}
-          />
+          {image && image.map((singleImage)=>(
+            <Image
+              src={singleImage}
+              alt={'image_thumbnail_path'}
+              borderRadius="md"
+              width={"100%"}
+              height={{base:'auto',md:'auto'}}
+            />
+          ))}
               <Divider
               orientation="horizontal"
               borderColor="inherit"
@@ -82,3 +84,17 @@ function CustomCard(singlePlant) {
 }
 
 export default CustomCard;
+// "scientificName": "Sansevieria trifasciata",
+// "careInstructions": "Water sparingly. Tolerates low light.",
+// "image": ["/src/assets/images/snakePlant1.jpg","/src/assets/images/snakePlant2.jpg"],
+// "description": "Known for its upright, sword-like leaves and air-purifying qualities.",
+// "humidity  const { image } = singlePlant;
+// {image.length >=1 ? image.map((singleImage)=>(
+//     <Image
+//       src={singleImage}
+//       alt={'image_thumbnail_path'}
+//       borderRadius="md"
+//       width={"100%"}
+//       height={{base:'auto',md:'auto'}}
+//     />
+//   )):null}its not dislaying images

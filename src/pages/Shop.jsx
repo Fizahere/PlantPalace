@@ -14,6 +14,7 @@ import {
   useDisclosure,
   InputRightElement,
   Text,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import CustomCard from "../components/Mist/Card";
 import { Colors } from "../assets/constants/colors";
@@ -23,7 +24,7 @@ import { useParams } from "react-router-dom";
 
 const Shop = () => {
   const { category: categoryData } = useParams();
-  console.log(categoryData,'yes its working')
+  console.log(categoryData, "yes its working");
   const [items, setItems] = useState([
     "sort by price",
     "sort alphabeticaly",
@@ -117,9 +118,15 @@ const Shop = () => {
         </Flex>
 
         <Box py={8} className="collection">
-          {data.map((singlePlant,index)=>{
-            return <CustomCard key={index} singlePlant={singlePlant} />
-          })}
+          <SimpleGrid
+            p={"10px"}
+            columns={{ base: 1, sm: 2, md: 3, lg: 4 }}
+            spacing={4}
+          >
+            {data.map((singlePlant, index) => {
+              return <CustomCard key={index} singlePlant={singlePlant} />;
+            })}
+          </SimpleGrid>
         </Box>
       </Box>
     </>

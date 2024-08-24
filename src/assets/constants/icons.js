@@ -16,7 +16,6 @@ import { IoEyeOffSharp } from "react-icons/io5";
 import { FcGoogle } from "react-icons/fc";
 
 export const App_Icons = {
-    LOGO1: TbPlant,
     LOGO: PiPlant,
     CLOSE: IoClose,
     HAMBURGER: RxHamburgerMenu,

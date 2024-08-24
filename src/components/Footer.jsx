@@ -8,20 +8,9 @@ function Footer() {
   return (
     <>
       <Box h={"250"} borderTop={"1px solid grey"} position="relative">
-        <Flex p={4}>
-          <App_Icons.LOGO1 fontSize={"1.8rem"} />
-          <Text
-            fontSize="2xl"
-            ml="2"
-            color="brand.500"
-            _dark={{
-              color: "white",
-            }}
-            fontWeight="semibold"
-          >
-            Plant Palace
-          </Text>
-        </Flex>
+        <Box fontWeight="bold">
+          <Icon as={App_Icons.LOGO} fontSize={30} /> Plant Palace
+        </Box>
         <Flex justifyContent={"center"} gap={"20px"} mt={4}>
           <Link href="https://www.instagram.com/" isExternal>
             <Icon
