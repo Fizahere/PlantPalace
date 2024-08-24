@@ -1,0 +1,384 @@
+{
+  "plants": {
+    "indoor": [
+      {
+        "id": "1",
+        "name": "Spider Plant",
+        "scientificName": "Chlorophytum comosum",
+        "careInstructions": "Water once a week. Prefers indirect sunlight.",
+        "image": "path/to/spider_plant.jpg",
+        "description": "A hardy, low-maintenance plant with arching leaves and small white flowers.",
+        "humidity": "Medium",
+        "temperatureRange": "60-75°F",
+        "commonProblems": [
+          "Brown tips",
+          "Root rot"
+        ]
+      },
+      {
+        "id": "2",
+        "name": "Snake Plant",
+        "scientificName": "Sansevieria trifasciata",
+        "careInstructions": "Water sparingly. Tolerates low light.",
+        "image": "path/to/snake_plant.jpg",
+        "description": "Known for its upright, sword-like leaves and air-purifying qualities.",
+        "humidity": "Low",
+        "temperatureRange": "65-80°F",
+        "commonProblems": [
+          "Leaf rot",
+          "Pests"
+        ]
+      },
+      {
+        "id": "3",
+        "name": "Peace Lily",
+        "scientificName": "Spathiphyllum",
+        "careInstructions": "Water regularly. Prefers low to medium light.",
+        "image": "path/to/peace_lily.jpg",
+        "description": "A plant with elegant white flowers and glossy green leaves.",
+        "humidity": "High",
+        "temperatureRange": "65-80°F",
+        "commonProblems": [
+          "Yellow leaves",
+          "Pests"
+        ]
+      },
+      {
+        "id": "4",
+        "name": "ZZ Plant",
+        "scientificName": "Zamioculcas zamiifolia",
+        "careInstructions": "Water when soil is dry. Thrives in low light.",
+        "image": "path/to/zz_plant.jpg",
+        "description": "Known for its waxy, dark green leaves and tolerance to neglect.",
+        "humidity": "Low",
+        "temperatureRange": "60-75°F",
+        "commonProblems": [
+          "Root rot",
+          "Pests"
+        ]
+      },
+      {
+        "id": "5",
+        "name": "Pothos",
+        "scientificName": "Epipremnum aureum",
+        "careInstructions": "Water when the top inch of soil is dry. Prefers indirect light.",
+        "image": "path/to/pothos.jpg",
+        "description": "A trailing plant with heart-shaped leaves and variegated patterns.",
+        "humidity": "Medium",
+        "temperatureRange": "60-80°F",
+        "commonProblems": [
+          "Yellowing leaves",
+          "Root rot"
+        ]
+      }
+    ],
+    "outdoor": [
+      {
+        "id": "6",
+        "name": "Rose",
+        "scientificName": "Rosa",
+        "careInstructions": "Water regularly. Needs full sun.",
+        "image": "path/to/rose.jpg",
+        "description": "Classic flowering plant with a variety of colors and fragrances.",
+        "humidity": "Medium to High",
+        "temperatureRange": "50-70°F",
+        "commonProblems": [
+          "Black spot",
+          "Powdery mildew"
+        ]
+      },
+      {
+        "id": "7",
+        "name": "Tulip",
+        "scientificName": "Tulipa",
+        "careInstructions": "Water moderately. Prefers cool weather.",
+        "image": "path/to/tulip.jpg",
+        "description": "Bright, colorful blooms that appear in spring.",
+        "humidity": "Low",
+        "temperatureRange": "40-60°F",
+        "commonProblems": [
+          "Tulip fire",
+          "Bulb rot"
+        ]
+      },
+      {
+        "id": "8",
+        "name": "Lavender",
+        "scientificName": "Lavandula",
+        "careInstructions": "Water when dry. Prefers full sun.",
+        "image": "path/to/lavender.jpg",
+        "description": "A fragrant herb with purple flowers used in aromatherapy.",
+        "humidity": "Low",
+        "temperatureRange": "60-70°F",
+        "commonProblems": [
+          "Fungal diseases",
+          "Pests"
+        ]
+      },
+      {
+        "id": "9",
+        "name": "Hydrangea",
+        "scientificName": "Hydrangea macrophylla",
+        "careInstructions": "Water regularly. Prefers partial to full sun.",
+        "image": "path/to/hydrangea.jpg",
+        "description": "Large, showy flowers that change color based on soil pH.",
+        "humidity": "Medium",
+        "temperatureRange": "50-70°F",
+        "commonProblems": [
+          "Leaf spot",
+          "Pests"
+        ]
+      },
+      {
+        "id": "10",
+        "name": "Sunflower",
+        "scientificName": "Helianthus annuus",
+        "careInstructions": "Water deeply. Prefers full sun.",
+        "image": "path/to/sunflower.jpg",
+        "description": "Tall plants with large, bright yellow flowers.",
+        "humidity": "Low",
+        "temperatureRange": "60-80°F",
+        "commonProblems": [
+          "Birds eating seeds",
+          "Powdery mildew"
+        ]
+      }
+    ],
+    "succulents": [
+      {
+        "id": "11",
+        "name": "Aloe Vera",
+        "scientificName": "Aloe barbadensis",
+        "careInstructions": "Water when dry. Prefers bright, indirect light.",
+        "image": "path/to/aloe_vera.jpg",
+        "description": "A succulent with thick, fleshy leaves known for its soothing gel.",
+        "humidity": "Low",
+        "temperatureRange": "60-80°F",
+        "commonProblems": [
+          "Leaf spots",
+          "Pests"
+        ]
+      },
+      {
+        "id": "12",
+        "name": "Echeveria",
+        "scientificName": "Echeveria elegans",
+        "careInstructions": "Water when soil is dry. Needs bright light.",
+        "image": "path/to/echeveria.jpg",
+        "description": "Rosette-shaped succulent with a variety of colors.",
+        "humidity": "Low",
+        "temperatureRange": "50-70°F",
+        "commonProblems": [
+          "Leaf rot",
+          "Sunburn"
+        ]
+      },
+      {
+        "id": "13",
+        "name": "Jade Plant",
+        "scientificName": "Crassula ovata",
+        "careInstructions": "Water when the soil is dry. Prefers bright light.",
+        "image": "path/to/jade_plant.jpg",
+        "description": "A popular succulent with thick, rounded leaves.",
+        "humidity": "Low",
+        "temperatureRange": "60-75°F",
+        "commonProblems": [
+          "Leaf drop",
+          "Mealybugs"
+        ]
+      },
+      {
+        "id": "14",
+        "name": "Zebra Cactus",
+        "scientificName": "Haworthia fasciata",
+        "careInstructions": "Water sparingly. Thrives in bright light.",
+        "image": "path/to/zebra_cactus.jpg",
+        "description": "A small succulent with striking white stripes on dark green leaves.",
+        "humidity": "Low",
+        "temperatureRange": "60-80°F",
+        "commonProblems": [
+          "Root rot",
+          "Pests"
+        ]
+      },
+      {
+        "id": "15",
+        "name": "Burro's Tail",
+        "scientificName": "Sedum morganianum",
+        "careInstructions": "Water when dry. Prefers bright light.",
+        "image": "path/to/burros_tail.jpg",
+        "description": "A trailing succulent with long, bead-like leaves.",
+        "humidity": "Low",
+        "temperatureRange": "65-80°F",
+        "commonProblems": [
+          "Leaf drop",
+          "Overwatering"
+        ]
+      }
+    ],
+    "flowering_shrubs": [
+      {
+        "id": "16",
+        "name": "Hydrangea",
+        "scientificName": "Hydrangea macrophylla",
+        "careInstructions": "Water regularly. Prefers partial to full sun.",
+        "image": "path/to/hydrangea_shrub.jpg",
+        "description": "Large, showy flowers that change color based on soil pH.",
+        "humidity": "Medium",
+        "temperatureRange": "50-70°F",
+        "commonProblems": [
+          "Leaf spot",
+          "Pests"
+        ]
+      },
+      {
+        "id": "17",
+        "name": "Azalea",
+        "scientificName": "Rhododendron",
+        "careInstructions": "Water regularly. Prefers acidic soil and partial shade.",
+        "image": "path/to/azalea.jpg",
+        "description": "Known for its vibrant flowers and evergreen leaves.",
+        "humidity": "Medium to High",
+        "temperatureRange": "55-70°F",
+        "commonProblems": [
+          "Leaf drop",
+          "Powdery mildew"
+        ]
+      },
+      {
+        "id": "18",
+        "name": "Lilac",
+        "scientificName": "Syringa vulgaris",
+        "careInstructions": "Water during dry periods. Prefers full sun.",
+        "image": "path/to/lilac.jpg",
+        "description": "A shrub with fragrant, purple or white flowers in spring.",
+        "humidity": "Low",
+        "temperatureRange": "50-70°F",
+        "commonProblems": [
+          "Powdery mildew",
+          "Leaf spot"
+        ]
+      },
+      {
+        "id": "19",
+        "name": "Camellia",
+        "scientificName": "Camellia japonica",
+        "careInstructions": "Water regularly. Prefers acidic soil and partial shade.",
+        "image": "path/to/camellia.jpg",
+        "description": "Produces large, showy flowers in winter or early spring.",
+        "humidity": "Medium",
+        "temperatureRange": "50-70°F",
+        "commonProblems": [
+          "Leaf drop",
+          "Flower bud drop"
+        ]
+      },
+      {
+        "id": "20",
+        "name": "Forsythia",
+        "scientificName": "Forsythia x intermedia",
+        "careInstructions": "Water during dry spells. Prefers full sun.",
+        "image": "path/to/forsythia.jpg",
+        "description": "Bright yellow flowers appear in early spring before the leaves.",
+        "humidity": "Medium",
+        "temperatureRange": "50-70°F",
+        "commonProblems": [
+          "Leaf spot",
+          "Powdery mildew"
+        ]
+      }
+    ],
+    "top_variety": [
+      {
+        "id": "1",
+        "name": "Spider Plant",
+        "scientificName": "Chlorophytum comosum",
+        "careInstructions": "Water once a week. Prefers indirect sunlight.",
+        "image": "path/to/spider_plant.jpg",
+        "description": "A hardy, low-maintenance plant with arching leaves and small white flowers.",
+        "humidity": "Medium",
+        "temperatureRange": "60-75°F",
+        "commonProblems": [
+          "Brown tips",
+          "Root rot"
+        ],
+        "category": "Indoor"
+      },
+      {
+        "id": "2",
+        "name": "Rose",
+        "scientificName": "Rosa",
+        "careInstructions": "Water regularly. Needs full sun.",
+        "image": "path/to/rose.jpg",
+        "description": "Classic flowering plant with a variety of colors and fragrances.",
+        "humidity": "Medium to High",
+        "temperatureRange": "50-70°F",
+        "commonProblems": [
+          "Black spot",
+          "Powdery mildew"
+        ],
+        "category": "Outdoor"
+      },
+      {
+        "id": "3",
+        "name": "Aloe Vera",
+        "scientificName": "Aloe barbadensis",
+        "careInstructions": "Water when dry. Prefers bright, indirect light.",
+        "image": "path/to/aloe_vera.jpg",
+        "description": "A succulent with thick, fleshy leaves known for its soothing gel.",
+        "humidity": "Low",
+        "temperatureRange": "60-80°F",
+        "commonProblems": [
+          "Leaf spots",
+          "Pests"
+        ],
+        "category": "Succulents"
+      },
+      {
+        "id": "4",
+        "name": "Azalea",
+        "scientificName": "Rhododendron",
+        "careInstructions": "Water regularly. Prefers acidic soil and partial shade.",
+        "image": "path/to/azalea.jpg",
+        "description": "Known for its vibrant flowers and evergreen leaves.",
+        "humidity": "Medium to High",
+        "temperatureRange": "55-70°F",
+        "commonProblems": [
+          "Leaf drop",
+          "Powdery mildew"
+        ],
+        "category": "Flowering Shrubs"
+      },
+      {
+        "id": "5",
+        "name": "ZZ Plant",
+        "scientificName": "Zamioculcas zamiifolia",
+        "careInstructions": "Water when soil is dry. Thrives in low light.",
+        "image": "path/to/zz_plant.jpg",
+        "description": "Known for its waxy, dark green leaves and tolerance to neglect.",
+        "humidity": "Low",
+        "temperatureRange": "60-75°F",
+        "commonProblems": [
+          "Root rot",
+          "Pests"
+        ],
+        "category": "Indoor"
+      },
+      {
+        "id": "6",
+        "name": "Jade Plant",
+        "scientificName": "Crassula ovata",
+        "careInstructions": "Water when the soil is dry. Prefers bright light.",
+        "image": "path/to/jade_plant.jpg",
+        "description": "A popular succulent with thick, rounded leaves.",
+        "humidity": "Low",
+        "temperatureRange": "60-75°F",
+        "commonProblems": [
+          "Leaf drop",
+          "Mealybugs"
+        ],
+        "category": "Succulents"
+      }
+    ]
+  }
+}

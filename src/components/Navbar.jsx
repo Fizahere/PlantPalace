@@ -14,13 +14,14 @@ import {
 } from "@chakra-ui/react";
 import { App_Icons } from "../assets/constants/icons";
 import { Colors } from "../assets/constants/colors";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cart from "../pages/Cart";
 
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const cartDrawer = useDisclosure();
+  const navigate=useNavigate()
 
   return (
     <>
@@ -39,7 +40,9 @@ function Navbar() {
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <Box fontWeight="bold"><Icon as={App_Icons.LOGO} fontSize={30}/> Plant Palace</Box>
+          <Box fontWeight="bold">
+            <Icon as={App_Icons.LOGO} fontSize={30} /> Plant Palace
+          </Box>
           <HStack spacing={8} alignItems="center">
             <HStack
               fontSize={15}
@@ -62,7 +65,7 @@ function Navbar() {
                 py={1}
                 rounded="md"
                 _hover={{ textDecoration: "none" }}
-                to="/about-us"
+                to="/plant-palace/about-us"
               >
                 About
               </Link>
@@ -71,7 +74,7 @@ function Navbar() {
                 py={1}
                 rounded="md"
                 _hover={{ textDecoration: "none" }}
-                href="#"
+                to={"/plant-palace/feedback"}
               >
                 Feedback
               </Link>
@@ -80,21 +83,27 @@ function Navbar() {
                 py={1}
                 rounded="md"
                 _hover={{ textDecoration: "none" }}
-                to="/contact-us"
+                to="/plant-palace/contact-us"
               >
                 Contact
               </Link>
             </HStack>
           </HStack>
           <Flex alignItems="center">
-            <Button colorScheme="teal" variant="" size="sm" mr={3}>
+            <Button
+              onClick={() => navigate("/plant-palace/login")}
+              colorScheme="teal"
+              variant=""
+              size="sm"
+              mr={3}
+            >
               Login
             </Button>
             <IconButton
-             icon={<Icon as={App_Icons.CART} fontSize={22}/>} 
-             onClick={cartDrawer.onOpen} 
-             bg={'transparent'}
-             />
+              icon={<Icon as={App_Icons.CART} fontSize={22} />}
+              onClick={cartDrawer.onOpen}
+              bg={"transparent"}
+            />
             <Divider
               orientation="vertical"
               borderColor="inherit"
@@ -128,10 +137,10 @@ function Navbar() {
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
             <Stack as="nav" spacing={4}>
-              <Link href="#">Home</Link>
-              <Link href="#">About</Link>
-              <Link href="#">Feedback</Link>
-              <Link href="#">Contact</Link>
+              <Link to={"/"}>Home</Link>
+              <Link to={"/plant-palace/about-us"}>About</Link>
+              <Link to={"/plant-palace/feedback"}>Feedback</Link>
+              <Link to={"/plant-palace/contact-us"}>Contact</Link>
             </Stack>
           </Box>
         ) : null}

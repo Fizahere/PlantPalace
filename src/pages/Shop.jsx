@@ -18,8 +18,12 @@ import {
 import CustomCard from "../components/Mist/Card";
 import { Colors } from "../assets/constants/colors";
 import { App_Icons } from "../assets/constants/icons";
+import plantData from "../data/PlantsData.json";
+import { useParams } from "react-router-dom";
 
 const Shop = () => {
+  const { category: categoryData } = useParams();
+  console.log(categoryData,'yes its working')
   const [items, setItems] = useState([
     "sort by price",
     "sort alphabeticaly",
@@ -32,19 +36,22 @@ const Shop = () => {
     setSelectedItem(item);
     setItems([item, ...items.filter((i) => i !== item)]);
   };
-  const filterInputHandler = (event) => {
-    event.preventDefault();
-    const searchValue = event.target.value;
-    const selectAllItems = document.querySelectorAll(".collection");
-    selectAllItems.forEach((singleItem) => {
-      const itemText = singleItem.innerText;
-      if (itemText.indexOf(searchValue) == -1) {
-        itemText.style.display = "none";
-      } else {
-        item.style.display = "block";
-      }
-    });
-  };
+  // const filterInputHandler = (event) => {
+  //   event.preventDefault();
+  //   const searchValue = event.target.value;
+  //   const selectAllItems = document.querySelectorAll(".collection");
+  //   selectAllItems.forEach((singleItem) => {
+  //     const itemText = singleItem.innerText;
+  //     if (itemText.indexOf(searchValue) == -1) {
+  //       itemText.style.display = "none";
+  //     } else {
+  //       item.style.display = "block";
+  //     }
+  //   });
+  // };
+
+  const data = plantData.plants[categoryData];
+  console.log(data, "data");
   // const { data: plantsData } = useQuery(
   //   "getPlants",
   //   () => getPlantService.getPlants
@@ -58,7 +65,7 @@ const Shop = () => {
           borderBottom={"1px solid grey"}
           justifyContent={"space-between"}
         >
-          <Heading>explore plants</Heading>
+          <Heading>{categoryData} plants</Heading>
           <Flex>
             <InputGroup display={"flex"} justifyContent={"space-between"}>
               <Input
@@ -110,7 +117,9 @@ const Shop = () => {
         </Flex>
 
         <Box py={8} className="collection">
-          <CustomCard />
+          {data.map((singlePlant,index)=>{
+            return <CustomCard key={index} singlePlant={singlePlant} />
+          })}
         </Box>
       </Box>
     </>

@@ -11,7 +11,9 @@ import { TbPlant } from "react-icons/tb";
 import { PiPlant } from "react-icons/pi";
 import { LuFacebook } from "react-icons/lu";
 import { MdMailOutline } from "react-icons/md";
-
+import { IoEyeSharp } from "react-icons/io5";
+import { IoEyeOffSharp } from "react-icons/io5";
+import { FcGoogle } from "react-icons/fc";
 
 export const App_Icons = {
     LOGO1: TbPlant,
@@ -27,5 +29,7 @@ export const App_Icons = {
     INSTAGRAM: FaInstagram,
     FACEBOOK: LuFacebook,
     MAIL: MdMailOutline,
-
+    OPENEYE:IoEyeSharp,
+    CLOSEDEYE:IoEyeOffSharp,
+    GOOGLE:FcGoogle,
 }

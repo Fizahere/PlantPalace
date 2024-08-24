@@ -16,15 +16,17 @@ import { Link, useNavigate } from "react-router-dom";
 import {Colors} from '../../assets/constants/colors'
 import mainImage3 from "../../assets/images/mainImage3.jpg";
 
-function CustomCard() {
-//   const { name } = singleCardData;
-//   const { image_thumbnail_path } = singleCardData;
-//   const { network } = singleCardData;
-//   const { status } = singleCardData;
-//   const { id } = singleCardData;
-//   const { start_date } = singleCardData;
-//   const { end_date } = singleCardData;
-//   const { country } = singleCardData;
+function CustomCard(singlePlant) {
+  const { id } = singlePlant;
+  const { name } = singlePlant;
+//   const { image_thumbnail_path } = singlePlant;
+  const { scientificName } = singlePlant;
+  const { temperatureRange } = singlePlant;
+  const { humidity } = singlePlant;
+  const { description } = singlePlant;
+  const { category } = singlePlant;
+  const { careInstructions } = singlePlant;
+  // const { careInstructions } = singlePlant;
 
   const navigate = useNavigate();
   return (
@@ -51,12 +53,12 @@ function CustomCard() {
             />
           <Stack mt="6" spacing={{base:'1',md:'3'}}>
             <Flex justifyContent={'space-between'}>
-            <Heading size={{base:'sm',md:'md'}}>Cactus</Heading>
+            <Heading size={{base:'sm',md:'md'}}>{name}</Heading>
             <Text mt={1} color="green" fontSize={{base:'12px',md:'1xl'}}>
              $ 200
             </Text>
             </Flex>
-            <Text fontSize={{base:'12px',md:'1xl'}}>Indoor Plant</Text>
+            <Text fontSize={{base:'12px',md:'1xl'}}>{category}</Text>
            
             <Button
             mt={{base:'1',md:'0'}}

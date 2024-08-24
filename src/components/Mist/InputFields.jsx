@@ -1,0 +1,32 @@
+import React from "react";
+import { Input, InputGroup, InputRightElement, Icon } from "@chakra-ui/react";
+import { Colors } from "../../assets/constants/colors";
+
+function CustomInputFeild(props) {
+  const { text, icon, onClickHandler, type } = props;
+  return (
+    <InputGroup display={"flex"} justifyContent={"space-between"}>
+      <InputRightElement mr={4}>
+        <Icon
+          cursor={onClickHandler ? "pointer" : "default"}
+          as={icon}
+          color={Colors.GREY}
+          fontSize={20}
+          onClick={onClickHandler ? onClickHandler : null}
+        />
+      </InputRightElement>
+      <Input
+        type={type ? type : text}
+        color={Colors.GREY}
+        p={3}
+        w={270}
+        bg={Colors.lightGrey}
+        _placeholder={{ color: Colors.GREY }}
+        placeholder={text}
+        pl={3}
+      />
+    </InputGroup>
+  );
+}
+
+export default CustomInputFeild;
