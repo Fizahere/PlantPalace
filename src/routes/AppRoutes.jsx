@@ -19,7 +19,7 @@ const AppRoutes = () => {
           <Route path="/plant-palace/explore-plants" element={<Shop />} />
           <Route path="/plant-palace/:category" element={<Shop />} />
           <Route path="/plant-palace/contact-us" element={<Contact />} />
-          <Route path="/plant-palace/detail/:id" element={<DetailPage />} />
+          <Route path="/plant-palace/detail/:category/:id" element={<DetailPage />} />
         </Route>
         <Route path="/plant-palace/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />

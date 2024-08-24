@@ -24,40 +24,54 @@ import { useParams } from "react-router-dom";
 
 const Shop = () => {
   const { category: categoryData } = useParams();
-  console.log(categoryData, "yes its working");
+  const dropdown = useDisclosure();
+
   const [items, setItems] = useState([
     "sort by price",
-    "sort alphabeticaly",
-    "most popular",
+    "sort alphabetically",
   ]);
   const [selectedItem, setSelectedItem] = useState(items[0]);
-  const dropdown = useDisclosure();
+
+  const [filteredData, setFilteredData] = useState(
+    categoryData ? plantData.plants[categoryData] : plantData.plants["indoor"]
+  );
 
   const handleSelect = (item) => {
     setSelectedItem(item);
     setItems([item, ...items.filter((i) => i !== item)]);
-  };
-  // const filterInputHandler = (event) => {
-  //   event.preventDefault();
-  //   const searchValue = event.target.value;
-  //   const selectAllItems = document.querySelectorAll(".collection");
-  //   selectAllItems.forEach((singleItem) => {
-  //     const itemText = singleItem.innerText;
-  //     if (itemText.indexOf(searchValue) == -1) {
-  //       itemText.style.display = "none";
-  //     } else {
-  //       item.style.display = "block";
-  //     }
-  //   });
-  // };
 
-  const data = plantData.plants[categoryData];
-  console.log(data, "data");
-  // const { data: plantsData } = useQuery(
-  //   "getPlants",
-  //   () => getPlantService.getPlants
-  // );
-  // console.log(plantsData, "plantData");
+    let sortedData = [...filteredData]; // Clone the filtered data to sort
+
+    switch (item) {
+      case "sort by price":
+        sortedData.sort((a, b) => a.price - b.price);
+        break;
+      case "sort alphabetically":
+        sortedData.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case "most popular":
+        sortedData.sort((a, b) => b.popularity - a.popularity); // Assuming you have a popularity field
+        break;
+      default:
+        break;
+    }
+
+    setFilteredData(sortedData);
+  };
+
+  const filterInputHandler = (event) => {
+    const searchValue = event.target.value.toLowerCase();
+    const data = categoryData
+      ? plantData.plants[categoryData]
+      : plantData.plants["indoor"];
+
+    const filtered = data.filter((plant) =>
+      plant.name.toLowerCase().includes(searchValue)
+    );
+
+    setFilteredData(filtered);
+  };
+
   return (
     <>
       <Box mt={4}>
@@ -72,8 +86,8 @@ const Shop = () => {
               <Input
                 borderRadius={10}
                 p={2}
-                onChange={() => filterInputHandler}
-                placeholder={"search"}
+                onChange={filterInputHandler}
+                placeholder={"Search"}
                 _placeholder={{ fontSize: "15px" }}
               />
               <InputRightElement mr={3}>
@@ -100,7 +114,7 @@ const Shop = () => {
                     </Text>
                     <Icon
                       as={App_Icons.DROPDOWN}
-                      transform={dropdown.isOpen && "rotate(180deg)"}
+                      transform={dropdown.isOpen ? "rotate(180deg)" : "rotate(0deg)"}
                       fontSize={"25px"}
                     />
                   </Flex>
@@ -123,9 +137,18 @@ const Shop = () => {
             columns={{ base: 1, sm: 2, md: 3, lg: 4 }}
             spacing={4}
           >
-            {data.map((singlePlant, index) => {
-              return <CustomCard key={index} singlePlant={singlePlant} />;
-            })}
+            {(filteredData && filteredData.length > 0
+              ? filteredData
+              : categoryData
+              ? plantData.plants[categoryData]
+              : plantData.plants["indoor"]
+            ).map((singlePlant, index) => (
+              <CustomCard
+                key={index}
+                category={categoryData}
+                singlePlant={singlePlant}
+              />
+            ))}
           </SimpleGrid>
         </Box>
       </Box>

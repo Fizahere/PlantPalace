@@ -23,7 +23,7 @@ const Home = () => {
     indoor: "INDOOR",
     outdoor: "OUTDOOR",
     flowering_shrubs: "FLOWERS",
-    sale: "SALE",
+    herbs: "HERBS",
     succulents: "NEW ARRIVAL",
     top_variety: "TOP",
   };
