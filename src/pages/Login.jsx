@@ -14,7 +14,7 @@ import { App_Icons } from "../assets/constants/icons";
 import CustomInputFeild from "../components/Mist/InputFields";
 
 function Login() {
-  const [isShowPassword, setShowPassword] = useState(false);
+  const [isShowPassword, setShowPassword] = useState(true);
 
   return (
     <>

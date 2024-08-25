@@ -7,7 +7,7 @@ import {
   SimpleGrid,
   VStack,
 } from "@chakra-ui/react";
-import plant1 from "../assets/images/plant1.jpg";
+import plant5 from "../assets/images/plant5.jpg";
 import plant2 from "../assets/images/plant2.jpg";
 import about2 from "../assets/images/about2.jpeg";
 import about from "../assets/images/about.jpg";
@@ -137,7 +137,7 @@ function About() {
               </Text>
             </Box>
             <Box>
-              <Image src={plant1} height="100%" objectFit="cover" />
+              <Image src={plant5} height="100%" objectFit="cover" />
             </Box>
           </SimpleGrid>
         </Box>

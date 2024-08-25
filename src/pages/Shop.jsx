@@ -26,21 +26,20 @@ const Shop = () => {
   const { category: categoryData } = useParams();
   const dropdown = useDisclosure();
 
-  const [items, setItems] = useState([
-    "sort by price",
-    "sort alphabetically",
-  ]);
+  const [items, setItems] = useState(["sort by price", "sort alphabetically"]);
   const [selectedItem, setSelectedItem] = useState(items[0]);
 
   const [filteredData, setFilteredData] = useState(
-    categoryData ? plantData.plants[categoryData] : plantData.plants["indoor"]
+    categoryData
+      ? plantData.plants[categoryData]
+      : Object.values(plantData.plants).flat()
   );
 
   const handleSelect = (item) => {
     setSelectedItem(item);
     setItems([item, ...items.filter((i) => i !== item)]);
 
-    let sortedData = [...filteredData]; // Clone the filtered data to sort
+    let sortedData = [...filteredData];
 
     switch (item) {
       case "sort by price":
@@ -48,9 +47,6 @@ const Shop = () => {
         break;
       case "sort alphabetically":
         sortedData.sort((a, b) => a.name.localeCompare(b.name));
-        break;
-      case "most popular":
-        sortedData.sort((a, b) => b.popularity - a.popularity); // Assuming you have a popularity field
         break;
       default:
         break;
@@ -80,8 +76,10 @@ const Shop = () => {
           borderBottom={"1px solid grey"}
           justifyContent={"space-between"}
         >
-          <Heading fontSize={{base:'20px',md:'30px'}}>{categoryData} plants</Heading>
-          <Flex flexDirection={{base:'column',md:'row'}}>
+          <Heading fontSize={{ base: "20px", md: "30px" }}>
+            {categoryData} plants
+          </Heading>
+          <Flex flexDirection={{ base: "column", md: "row" }}>
             <InputGroup display={"flex"} justifyContent={"space-between"}>
               <Input
                 borderRadius={10}
@@ -94,7 +92,7 @@ const Shop = () => {
                 <Icon as={App_Icons.SEARCH} color={"grey"} fontSize={20} />
               </InputRightElement>
             </InputGroup>
-            <Box ml={4} mt={{base:2,md:0}}>
+            <Box ml={4} mt={{ base: 2, md: 0 }}>
               <Menu>
                 <MenuButton
                   as={Button}
@@ -114,7 +112,9 @@ const Shop = () => {
                     </Text>
                     <Icon
                       as={App_Icons.DROPDOWN}
-                      transform={dropdown.isOpen ? "rotate(180deg)" : "rotate(0deg)"}
+                      transform={
+                        dropdown.isOpen ? "rotate(180deg)" : "rotate(0deg)"
+                      }
                       fontSize={"25px"}
                     />
                   </Flex>
