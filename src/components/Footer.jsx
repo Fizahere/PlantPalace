@@ -1,16 +1,18 @@
 import React from "react";
 import { Box, Flex, Text, Icon, Link } from "@chakra-ui/react";
 import { Colors } from "../assets/constants/colors";
-import { Link as DomLink } from "react-router-dom";
+import { Link as DomLink, } from "react-router-dom";
 import { App_Icons } from "../assets/constants/icons";
 
 function Footer() {
   return (
     <>
       <Box h={"250"} borderTop={"1px solid grey"} position="relative">
-        <Box fontWeight="bold">
-          <Icon as={App_Icons.LOGO} fontSize={30} /> Plant Palace
-        </Box>
+        <DomLink to={'/'}>
+        <Flex  mt={4}>
+          <Icon as={App_Icons.LOGO} fontSize={{base:20,md:25}} /> <Text mt={1} ml={1} fontSize={{base:15,md:20}} fontWeight="bold">Plant Palace</Text>
+          </Flex>
+        </DomLink>
         <Flex justifyContent={"center"} gap={"20px"} mt={4}>
           <Link href="https://www.instagram.com/" isExternal>
             <Icon
@@ -59,7 +61,7 @@ function Footer() {
             p={2}
             display={"flex"}
             fontSize={{
-              base: "12px",
+              base: "10px",
               md: "14px",
             }}
             justifyContent={"center"}

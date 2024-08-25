@@ -19,6 +19,11 @@ import { VscFeedback } from "react-icons/vsc";
 import { BiSupport } from "react-icons/bi";
 import { TiBusinessCard } from "react-icons/ti";
 import { TbMessageChatbot } from "react-icons/tb";
+import { FaRegSmileBeam } from "react-icons/fa";
+import { PiSmileySadDuotone } from "react-icons/pi";
+import { TfiFaceSad } from "react-icons/tfi";
+import { BiHappyHeartEyes } from "react-icons/bi";
+import { BsEmojiSmileUpsideDown } from "react-icons/bs";
 
 export const App_Icons = {
     LOGO: PiPlant,
@@ -42,4 +47,9 @@ export const App_Icons = {
     SUPPORT:BiSupport,
     MEDIA:TiBusinessCard,
     MESSAGE:TbMessageChatbot,
+    SAD:TfiFaceSad,
+    UNHAPPY:PiSmileySadDuotone,
+    SATISFY:BsEmojiSmileUpsideDown,
+    HAPPY:FaRegSmileBeam,
+    GOOD:BiHappyHeartEyes,
 }

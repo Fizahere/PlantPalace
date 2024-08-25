@@ -7,6 +7,7 @@ import {
   Text,
   Textarea,
   Icon,
+  Button,
 } from "@chakra-ui/react";
 import { Colors } from "../assets/constants/colors";
 import { App_Icons } from "../assets/constants/icons";
@@ -96,6 +97,7 @@ const Contact = () => {
               </Text>
               <Textarea placeholder={"message**"}></Textarea>
             </Box>
+            <Button width={'100%'} color={Colors.WHITE} _hover={{bg:Colors.THEMEBUTTON}} bg={Colors.THEMEBUTTON}>Send</Button>
           </Box>
         </Flex>
         <Box

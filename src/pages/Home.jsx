@@ -7,7 +7,6 @@ import {
   Button,
   Text,
   useColorMode,
-  IconButton,
   Icon,
 } from "@chakra-ui/react";
 import mainImage from "../assets/images/mainImage.png";

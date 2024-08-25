@@ -7,21 +7,20 @@ import {
   Button,
   useDisclosure,
   Stack,
-  // Link,
   Icon,
   useColorMode,
   Divider,
+  Text,
 } from "@chakra-ui/react";
 import { App_Icons } from "../assets/constants/icons";
 import { Colors } from "../assets/constants/colors";
-import { Link, useNavigate } from "react-router-dom";
+import { Link,  } from "react-router-dom";
 import Cart from "../pages/Cart";
 
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const cartDrawer = useDisclosure();
-  const navigate=useNavigate()
 
   return (
     <>
@@ -40,9 +39,11 @@ function Navbar() {
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <Box fontWeight="bold">
-            <Icon as={App_Icons.LOGO} fontSize={30} /> Plant Palace
-          </Box>
+          <Link to={'/'} >
+          <Flex>
+            <Icon as={App_Icons.LOGO} fontSize={{base:20,md:25}} /> <Text mt={1} ml={1} fontSize={{base:15,md:20}} fontWeight="bold">Plant Palace</Text>
+            </Flex>
+          </Link>
           <HStack spacing={8} alignItems="center">
             <HStack
               fontSize={15}
