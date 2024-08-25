@@ -52,7 +52,7 @@ function CustomCard(props) {
           />
           <Stack mt="6" spacing={{ base: "1", md: "3" }}>
             <Flex justifyContent={"space-between"}>
-              <Heading color={"black"} size={{ base: "sm", md: "md" }}>
+              <Heading size={{ base: "sm", md: "md" }}>
                 {name}
               </Heading>
               <Text mt={1} color="green" fontSize={{ base: "12px", md: "1xl" }}>
@@ -63,7 +63,7 @@ function CustomCard(props) {
 
             <Button
               mt={{ base: "1", md: "0" }}
-              bg={Colors.THEMEBUTTON}
+              bgGradient="linear(to-r, #30362f, #4d5c3e)"
               color={Colors.WHITE}
               _hover={{
                 color: "",

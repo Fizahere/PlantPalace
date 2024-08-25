@@ -96,14 +96,13 @@ const Shop = () => {
               <Menu>
                 <MenuButton
                   as={Button}
-                  bg={Colors.WHITE}
+                 _dark={{ bg:Colors.DARKTHEME}}
                   border={"1px solid #e2e8f0"}
-                  color={Colors.TEXTGREY}
                   onClick={dropdown.onToggle}
                 >
                   <Flex>
                     <Text
-                      color={"#718196"}
+                      color={Colors.GREY}
                       fontWeight={"400"}
                       fontSize={"15px"}
                       mt={0.5}
@@ -119,9 +118,9 @@ const Shop = () => {
                     />
                   </Flex>
                 </MenuButton>
-                <MenuList>
+                <MenuList  _dark={{bg:Colors.DARKTHEME}}>
                   {items.map((item) => (
-                    <MenuItem key={item} onClick={() => handleSelect(item)}>
+                    <MenuItem _dark={{bg:Colors.DARKTHEME}} key={item} onClick={() => handleSelect(item)}>
                       {item}
                     </MenuItem>
                   ))}

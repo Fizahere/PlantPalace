@@ -31,15 +31,23 @@ function Login() {
             base: "100%",
             md: "40%",
           }}
-          // h={600}
-          bg={Colors.DARKTHEME}
+          _dark={{
+            bg: Colors.DARKTHEME,
+          }}
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
         >
           <Box>
-            <Box bg={Colors.ThemePurple} w={300} p={4}>
-              <Heading fontWeight={"bold"}>Login</Heading>
+            <Box py={0} px={4}>
+              <Heading
+                color={Colors.BLACK}
+                _dark={{ color: Colors.WHITE }}
+                size={"lg"}
+                fontWeight={"bold"}
+              >
+                Login
+              </Heading>
             </Box>
             <VStack spacing={5} w={300} py={8} px={4} bg={Colors.white}>
               <CustomInputFeild text={"Email**"} icon={App_Icons.MAIL} />
@@ -55,7 +63,7 @@ function Login() {
               />
               <Box>
                 <Button
-                  bg={Colors.THEMEBUTTON}
+                  bgGradient="linear(to-r, #30362f, #4d5c3e)"
                   color={Colors.WHITE}
                   _hover={{ bg: Colors.THEMEBUTTON }}
                   w={270}
@@ -100,7 +108,13 @@ function Login() {
           alignItems={"center"}
         >
           <Icon as={App_Icons.LOGO} color={Colors.WHITE} fontSize={100} />
-          <Text mt={6} ml={1} fontSize={{ base: 25, md: 30 }} fontWeight="bold">
+          <Text
+            color={Colors.WHITE}
+            mt={6}
+            ml={1}
+            fontSize={{ base: 25, md: 30 }}
+            fontWeight="bold"
+          >
             Plant Palace
           </Text>
         </Box>

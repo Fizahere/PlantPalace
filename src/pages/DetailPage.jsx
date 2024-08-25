@@ -99,7 +99,7 @@ function DetailPage() {
               <Button
                 mt={8}
                 width={"100%"}
-                bg={Colors.THEMEBUTTON}
+                bgGradient="linear(to-r, #30362f, #4d5c3e)"
                 color={Colors.WHITE}
                 _hover={{ bg: Colors.THEMEBUTTON }}
               >
