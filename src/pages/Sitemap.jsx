@@ -30,7 +30,7 @@ const Sitemap = () => {
           </Box>
 
           <Box display={'flex'} mb={2}>
-            <Text fontSize={'14px'} fontWeight={'bold'}>
+            <Text display={'flex'} fontSize={'14px'} fontWeight={'bold'}>
             <Icon mr={1} color={'orange'} fontSize={15} as={App_Icons.ABOUT}/>
               About:</Text>
             <Link to={'/plant-palace/about-us'}>
@@ -41,8 +41,8 @@ const Sitemap = () => {
           </Box>
 
           <Box display={'flex'} mb={2}>
-            <Text fontSize={'14px'} fontWeight={'bold'}>
-            <Icon mr={1} color={Colors.GREEN} fontSize={15} as={App_Icons.PHONE}/>
+            <Text display={'flex'} fontSize={'14px'} fontWeight={'bold'}>
+            <Icon mr={1} mt={1} color={Colors.GREEN} fontSize={15} as={App_Icons.PHONE}/>
               Contact:</Text>
             <Link to={'/plant-palace/contact-us'}>
               <Text fontSize={14} color={Colors.BLUE} ml={2}>
@@ -52,8 +52,8 @@ const Sitemap = () => {
           </Box>
 
           <Box display={'flex'} mb={2}>
-            <Text fontSize={'14px'} fontWeight={'bold'}>
-            <Icon mr={1} color={Colors.PURPLE} fontSize={15} as={App_Icons.FEEDBACK}/>
+            <Text display={'flex'} fontSize={'14px'} fontWeight={'bold'}>
+            <Icon mr={1} mt={1} color={Colors.PURPLE} fontSize={15} as={App_Icons.FEEDBACK}/>
               Feedback:</Text>
             <Link to={'/plant-palace/feedback'}>
               <Text fontSize={14} color={Colors.BLUE} ml={2}>
@@ -63,7 +63,7 @@ const Sitemap = () => {
           </Box>
 
           <Box display={'flex'} mb={2}>
-            <Text fontSize={'14px'} fontWeight={'bold'}>
+            <Text display={'flex'} fontSize={'14px'} fontWeight={'bold'}>
               <Icon mr={1} color={'#ff80bf'} fontSize={15} as={App_Icons.CART}/>
             Shop:</Text>
             <Link to={'/plant-palace/explore-plants'}>
@@ -74,8 +74,8 @@ const Sitemap = () => {
           </Box>
 
           <Box display={'flex'} mb={2}>
-            <Text fontSize={'14px'} fontWeight={'bold'}>
-            <Icon mr={1} color={'#999900'} fontSize={15} as={App_Icons.LOGIN}/>
+            <Text display={'flex'} fontSize={'14px'} fontWeight={'bold'}>
+            <Icon mr={1} mt={1} color={'#999900'} fontSize={15} as={App_Icons.LOGIN}/>
             Login:</Text>
             <Link to={'/plant-palace/login'}>
               <Text fontSize={14} color={Colors.BLUE} ml={2}>
