@@ -15,14 +15,37 @@ import { imageMap } from "../assets/constants/images";
 
 function DetailPage() {
   const { category: catData, id: dataId } = useParams();
+  const [quantity, setQuantity] = useState(1);
   const categoryData = plantData.plants[catData];
   let data = [];
   if (categoryData) {
     data = categoryData.find((plant) => plant.id.toString() === dataId);
   }
-  const [quantity, setQuantity] = useState(1);
-  const [totalPrice, setTotalPrice] = useState(data.price);
+  const [totalPrice, setTotalPrice] = useState(data.price * quantity);
   const imageSrc = imageMap[data.image];
+
+  const addToCart = () => {
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingItem = cartItems.find(item => item.id === data.id);
+
+    if (existingItem) {
+      existingItem.quantity += quantity;
+      existingItem.totalPrice += totalPrice;
+    } else {
+      cartItems.push({
+        id: data.id,
+        name: data.name,
+        price: data.price,
+        quantity: quantity,
+        totalPrice: totalPrice,
+        image: data.image,
+      });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+    alert("Item added to cart!");
+  };
+
   return (
     <>
       <Box display={"flex"} justifyContent={"space-between"}>
@@ -44,12 +67,6 @@ function DetailPage() {
                 }}
                 mt={"14px"}
               />
-              <Box
-                display={"flex"}
-                justifyContent={"space-between"}
-                mt="6"
-                spacing="3"
-              ></Box>
             </Box>
           </Box>
           <Box
@@ -71,13 +88,12 @@ function DetailPage() {
               <Flex mt={10} justifyContent={"space-between"}>
                 <Flex>
                   <Text fontSize={"15px"} fontWeight={"bold"} m={2}>
-                    Quanitiy:
+                    Quantity:
                   </Text>
                   <Button
                     onClick={() => {
-                      const newQuantity = quantity + 1;
-                      setQuantity(newQuantity);
-                      setTotalPrice(data.price * newQuantity);
+                      setQuantity(quantity + 1);
+                      setTotalPrice((data.price * (quantity + 1)));
                     }}
                   >
                     +
@@ -87,9 +103,8 @@ function DetailPage() {
                   </Text>
                   <Button
                     onClick={() => {
-                      const newQuantity = quantity !== 1 ? quantity - 1 : 1;
-                      setQuantity(newQuantity);
-                      setTotalPrice(data.price * newQuantity);
+                      setQuantity(quantity !== 1 ? quantity - 1 : 1);
+                      setTotalPrice((data.price * (quantity !== 1 ? quantity - 1 : 1)));
                     }}
                   >
                     -
@@ -103,11 +118,12 @@ function DetailPage() {
                 bgGradient="linear(to-r, #30362f, #4d5c3e)"
                 color={Colors.WHITE}
                 _hover={{ bg: Colors.THEMEBUTTON }}
+                onClick={addToCart}
               >
                 Add To Cart
               </Button>
               <Text fontSize={"15px"} fontWeight={"bold"} mt={10}>
-                Care Instrutions:
+                Care Instructions:
               </Text>
               <Text color={Colors.GREY} fontSize={14}>
                 {data.careInstructions}
@@ -117,14 +133,16 @@ function DetailPage() {
                 <b>Humidity:</b> {data.humidity}
               </Text>
               <Text color={Colors.GREY} fontSize={14}>
-                <b>Temprature Renge:</b> {data.temperatureRange}
+                <b>Temperature Range:</b> {data.temperatureRange}
               </Text>
               <Text fontSize={"15px"} fontWeight={"bold"} mt={5}>
                 Common Problems:
               </Text>
               {data.commonProblems &&
                 data.commonProblems.map((singlepro) => (
-                  <Text fontSize={14}>{singlepro}</Text>
+                  <Text fontSize={14} key={singlepro}>
+                    {singlepro}
+                  </Text>
                 ))}
             </Box>
           </Box>

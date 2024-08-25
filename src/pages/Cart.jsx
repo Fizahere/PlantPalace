@@ -14,12 +14,24 @@ import {
   DrawerFooter,
   DrawerCloseButton,
   Divider,
+  IconButton,
+  CardHeader,
 } from "@chakra-ui/react";
-import mainImage3 from "../assets/images/mainImage3.jpg";
 import { Colors } from "../assets/constants/colors";
+import { imageMap } from "../assets/constants/images";
+import { App_Icons } from "../assets/constants/icons";
 
 const Cart = ({ disclosure }) => {
   const btnRef = React.useRef();
+  const [cartItems, setCartItems] = React.useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
+
+  const deleteItem = (itemId) => {
+    const updatedCart = cartItems.filter((item) => item.id !== itemId);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    setCartItems(updatedCart);
+  };
 
   return (
     <>
@@ -35,28 +47,51 @@ const Cart = ({ disclosure }) => {
           <DrawerHeader>Cart</DrawerHeader>
 
           <DrawerBody>
-            <Card
-              boxShadow={
-                "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
-              }
-              _dark={{ bg: Colors.DARKTHEME }}
-            >
-              <CardBody>
-                <Flex flexDir={"row"}>
-                  <Image src={mainImage3} height={100} width={100} />
-                  <Divider
-                    orientation="vertical"
-                    borderColor="inherit"
-                    height={"95px"}
-                    borderWidth="0.5px"
-                    mr={3}
-                  />
-                  <Text fontSize={15} mt={5}>
-                    Name: Cactus Price: $10 Quantity: 2
-                  </Text>
-                </Flex>
-              </CardBody>
-            </Card>
+            {cartItems.length > 0 ? (
+              cartItems.map((item, index) => (
+                <Card
+                  key={index}
+                  boxShadow={
+                    "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+                  }
+                  _dark={{ bg: Colors.DARKTHEME }}
+                  mb={4}
+                >
+                  <CardBody>
+                    <IconButton
+                      aria-label="Delete item"
+                      icon={<App_Icons.CLOSE />}
+                    ml={'190px'}
+                      bg={"transparent"}
+                      onClick={() => deleteItem(item.id)}
+                    />
+                    <Flex flexDir={"row"} alignItems={"center"}>
+                      <Image
+                        src={imageMap[item.image]}
+                        alt={item.name}
+                        height={100}
+                        width={100}
+                      />
+                      <Divider
+                        orientation="vertical"
+                        borderColor="inherit"
+                        height={"95px"}
+                        borderWidth="0.5px"
+                        mr={3}
+                      />
+                      <Flex flexDirection={"column"}>
+                        <Text fontSize={10}>Name: {item.name}</Text>
+                        <Text fontSize={10}>Price: ${item.price}</Text>
+                        <Text fontSize={10}>Quantity: {item.quantity}</Text>
+                        <Text fontSize={10}>Total: ${item.totalPrice}</Text>
+                      </Flex>
+                    </Flex>
+                  </CardBody>
+                </Card>
+              ))
+            ) : (
+              <Text>No items in the cart.</Text>
+            )}
           </DrawerBody>
 
           <DrawerFooter>
@@ -73,4 +108,5 @@ const Cart = ({ disclosure }) => {
     </>
   );
 };
+
 export default Cart;

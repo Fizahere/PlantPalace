@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Flex,
   HStack,
   IconButton,
+  Button,
   useDisclosure,
   Stack,
   Icon,
@@ -13,13 +14,15 @@ import {
 } from "@chakra-ui/react";
 import { App_Icons } from "../assets/constants/icons";
 import { Colors } from "../assets/constants/colors";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cart from "../pages/Cart";
 
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const cartDrawer = useDisclosure();
+  const [user, setUser] = useState(localStorage.getItem("user"));
+  // const navigate=useNavigate()
 
   return (
     <>
@@ -98,16 +101,34 @@ function Navbar() {
             </HStack>
           </HStack>
           <Flex alignItems="center">
-            <Link
-              to={"/plant-palace/login"}
-              colorScheme="teal"
-              variant=""
-              size="sm"
-            >
-              <Text mr={3} fontSize={"15px"} fontWeight={"bold"}>
-                Login
-              </Text>
-            </Link>
+            {user ? (
+              <Button
+                bg={"transparent"}
+                _hover={{ bg: "transparent" }}
+                mr={3}
+                fontSize={"15px"}
+                fontWeight={"bold"}
+                onClick={() => {
+                  if (confirm("are you sure?")) {
+                    localStorage.removeItem("user");
+                    location.href = "/";
+                  }
+                }}
+              >
+                Logout
+              </Button>
+            ) : (
+              <Link
+                to={"/plant-palace/login"}
+                colorScheme="teal"
+                variant=""
+                size="sm"
+              >
+                <Text fontWeight={"bold"} mr={2}>
+                  Login
+                </Text>
+              </Link>
+            )}
             <IconButton
               icon={<Icon as={App_Icons.CART} fontSize={22} />}
               onClick={cartDrawer.onOpen}

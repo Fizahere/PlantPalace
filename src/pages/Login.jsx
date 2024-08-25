@@ -12,9 +12,39 @@ import {
 import { Colors } from "../assets/constants/colors";
 import { App_Icons } from "../assets/constants/icons";
 import CustomInputFeild from "../components/Mist/InputFields";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [isShowPassword, setShowPassword] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const passwordRegex = /^\d{5,}$/;
+
+  const handleLogin = () => {
+    if(!email||!password){
+      setError('fill the fields!')
+      return
+    }
+    if (!emailRegex.test(email)) {
+      setError("Invalid email!");
+      return;
+    }
+    if (!passwordRegex.test(password)) {
+      setError("use strong password!");
+      return;
+    }
+    let user = {
+      email: email,
+      password: password,
+    };
+    setError("");
+    localStorage.setItem("user", JSON.stringify(user));
+    navigate("/");
+  };
 
   return (
     <>
@@ -50,9 +80,20 @@ function Login() {
               </Heading>
             </Box>
             <VStack spacing={5} w={300} py={8} px={4} bg={Colors.white}>
-              <CustomInputFeild text={"Email**"} icon={App_Icons.MAIL} />
+              <CustomInputFeild
+                onChangeHandler={(e) => {
+                  setEmail(e.target.value);
+                }}
+                ivalue={email}
+                text={"Email**"}
+                icon={App_Icons.MAIL}
+              />
               <CustomInputFeild
                 text={"Password**"}
+                ivalue={password}
+                onChangeHandler={(e) => {
+                  setPassword(e.target.value);
+                }}
                 icon={isShowPassword ? App_Icons.CLOSEDEYE : App_Icons.OPENEYE}
                 type={isShowPassword ? "password" : "text"}
                 onClickHandler={() =>
@@ -61,6 +102,9 @@ function Login() {
                     : setShowPassword(true)
                 }
               />
+              <Text mr={7} color={"red"}>
+                {error && error}
+              </Text>
               <Box>
                 <Button
                   bgGradient="linear(to-r, #30362f, #4d5c3e)"
@@ -70,6 +114,7 @@ function Login() {
                   p={3}
                   borderRadius={8}
                   fontWeight={"bold"}
+                  onClick={handleLogin}
                 >
                   Login
                 </Button>
