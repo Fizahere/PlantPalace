@@ -7,7 +7,7 @@ import { App_Icons } from "../assets/constants/icons";
 function Footer() {
   return (
     <>
-      <Box h={"250"} borderTop={"1px solid grey"} position="relative">
+      <Box h={"auto"} borderTop={"1px solid grey"} >
         <DomLink to={"/"}>
           <Flex mt={4}>
             <Icon as={App_Icons.LOGO} fontSize={{ base: 20, md: 25 }} />{" "}
@@ -50,7 +50,7 @@ function Footer() {
             />
           </Link>
         </Flex>
-        <Flex justifyContent={"center"} gap={"30px"} mt={"10px"}>
+        <Flex flexDirection={{base:'column',md:'row'}} mb={10} justifyContent={"center"} gap={"30px"} mt={"10px"}>
           <DomLink to={"/"}>
             <Text>Home</Text>
           </DomLink>
@@ -69,8 +69,11 @@ function Footer() {
           <DomLink to={"/plant-palace/login"}>
             <Text>Login</Text>
           </DomLink>
+          <DomLink to={"/plant-palace/site-map"}>
+            <Text>Sitemap</Text>
+          </DomLink>
         </Flex>
-        <Box position="absolute" bottom="0" width="100%">
+        <Box width="100%">
           <Text
             p={2}
             display={"flex"}

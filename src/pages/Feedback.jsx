@@ -56,7 +56,6 @@ const Feedback = () => {
         <Heading borderBottom={"1px solid grey"} pb={2} mb={4}>
           Feedback
         </Heading>
-        {/* <Center> */}
         <Flex
           justifyContent={"center"}
           alignItems={"center"}
@@ -124,7 +123,6 @@ const Feedback = () => {
             </Button>
           </Box>
         </Flex>
-        {/* </Center> */}
       </Box>
     </>
   );

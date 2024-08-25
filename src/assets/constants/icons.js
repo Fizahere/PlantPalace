@@ -24,6 +24,8 @@ import { PiSmileySadDuotone } from "react-icons/pi";
 import { TfiFaceSad } from "react-icons/tfi";
 import { BiHappyHeartEyes } from "react-icons/bi";
 import { BsEmojiSmileUpsideDown } from "react-icons/bs";
+import { AiOutlineLogin } from "react-icons/ai";
+import { LuBadgeInfo } from "react-icons/lu";
 
 export const App_Icons = {
     LOGO: PiPlant,
@@ -52,4 +54,6 @@ export const App_Icons = {
     SATISFY:BsEmojiSmileUpsideDown,
     HAPPY:FaRegSmileBeam,
     GOOD:BiHappyHeartEyes,
+    LOGIN:AiOutlineLogin,
+    ABOUT:LuBadgeInfo
 }

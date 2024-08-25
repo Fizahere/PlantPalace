@@ -59,7 +59,7 @@ const Shop = () => {
     const searchValue = event.target.value.toLowerCase();
     const data = categoryData
       ? plantData.plants[categoryData]
-      : Object.values(plantData.plants).flat()
+      : Object.values(plantData.plants).flat();
 
     const filtered = data.filter((plant) =>
       plant.name.toLowerCase().includes(searchValue)
@@ -77,7 +77,7 @@ const Shop = () => {
           justifyContent={"space-between"}
         >
           <Heading fontSize={{ base: "20px", md: "30px" }}>
-            {categoryData} plants
+            {categoryData ? categoryData : "explore"} plants
           </Heading>
           <Flex flexDirection={{ base: "column", md: "row" }}>
             <InputGroup display={"flex"} justifyContent={"space-between"}>
@@ -96,7 +96,7 @@ const Shop = () => {
               <Menu>
                 <MenuButton
                   as={Button}
-                 _dark={{ bg:Colors.DARKTHEME}}
+                  _dark={{ bg: Colors.DARKTHEME }}
                   border={"1px solid #e2e8f0"}
                   onClick={dropdown.onToggle}
                 >
@@ -118,9 +118,13 @@ const Shop = () => {
                     />
                   </Flex>
                 </MenuButton>
-                <MenuList  _dark={{bg:Colors.DARKTHEME}}>
+                <MenuList _dark={{ bg: Colors.DARKTHEME }}>
                   {items.map((item) => (
-                    <MenuItem _dark={{bg:Colors.DARKTHEME}} key={item} onClick={() => handleSelect(item)}>
+                    <MenuItem
+                      _dark={{ bg: Colors.DARKTHEME }}
+                      key={item}
+                      onClick={() => handleSelect(item)}
+                    >
                       {item}
                     </MenuItem>
                   ))}
