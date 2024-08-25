@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { App_Icons } from "../assets/constants/icons";
 import { Colors } from "../assets/constants/colors";
-import { Link,  } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Cart from "../pages/Cart";
 
 function Navbar() {
@@ -39,9 +39,17 @@ function Navbar() {
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <Link to={'/'} >
-          <Flex>
-            <Icon as={App_Icons.LOGO} fontSize={{base:20,md:25}} /> <Text mt={1} ml={1} fontSize={{base:15,md:20}} fontWeight="bold">Plant Palace</Text>
+          <Link to={"/"}>
+            <Flex>
+              <Icon as={App_Icons.LOGO} fontSize={{ base: 20, md: 25 }} />{" "}
+              <Text
+                mt={1}
+                ml={1}
+                fontSize={{ base: 15, md: 20 }}
+                fontWeight="bold"
+              >
+                Plant Palace
+              </Text>
             </Flex>
           </Link>
           <HStack spacing={8} alignItems="center">
@@ -91,15 +99,16 @@ function Navbar() {
             </HStack>
           </HStack>
           <Flex alignItems="center">
-            <Button
-              onClick={() => navigate("/plant-palace/login")}
+            <Link
+              to={"/plant-palace/login"}
               colorScheme="teal"
               variant=""
               size="sm"
-              mr={3}
             >
-              Login
-            </Button>
+              <Text mr={3} fontSize={"15px"} fontWeight={"bold"}>
+                Login
+              </Text>
+            </Link>
             <IconButton
               icon={<Icon as={App_Icons.CART} fontSize={22} />}
               onClick={cartDrawer.onOpen}

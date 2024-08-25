@@ -1,16 +1,24 @@
 import React from "react";
 import { Box, Flex, Text, Icon, Link } from "@chakra-ui/react";
 import { Colors } from "../assets/constants/colors";
-import { Link as DomLink, } from "react-router-dom";
+import { Link as DomLink } from "react-router-dom";
 import { App_Icons } from "../assets/constants/icons";
 
 function Footer() {
   return (
     <>
       <Box h={"250"} borderTop={"1px solid grey"} position="relative">
-        <DomLink to={'/'}>
-        <Flex  mt={4}>
-          <Icon as={App_Icons.LOGO} fontSize={{base:20,md:25}} /> <Text mt={1} ml={1} fontSize={{base:15,md:20}} fontWeight="bold">Plant Palace</Text>
+        <DomLink to={"/"}>
+          <Flex mt={4}>
+            <Icon as={App_Icons.LOGO} fontSize={{ base: 20, md: 25 }} />{" "}
+            <Text
+              mt={1}
+              ml={1}
+              fontSize={{ base: 15, md: 20 }}
+              fontWeight="bold"
+            >
+              Plant Palace
+            </Text>
           </Flex>
         </DomLink>
         <Flex justifyContent={"center"} gap={"20px"} mt={4}>
@@ -46,14 +54,20 @@ function Footer() {
           <DomLink to={"/"}>
             <Text>Home</Text>
           </DomLink>
-          <DomLink to={"/about-us"}>
+          <DomLink to={"/plant-palace/about-us"}>
             <Text>About</Text>
           </DomLink>
-          <DomLink to={"/contact-us"}>
+          <DomLink to={"/plant-palace/contact-us"}>
             <Text>Contact</Text>
           </DomLink>
-          <DomLink to={"/explore-plants"}>
+          <DomLink to={"/plant-palace/explore-plants"}>
             <Text>Shop</Text>
+          </DomLink>
+          <DomLink to={"/plant-palace/feedback"}>
+            <Text>Feedback</Text>
+          </DomLink>
+          <DomLink to={"/plant-palace/login"}>
+            <Text>Login</Text>
           </DomLink>
         </Flex>
         <Box position="absolute" bottom="0" width="100%">

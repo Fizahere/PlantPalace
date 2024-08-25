@@ -31,8 +31,8 @@ function Login() {
             base: "100%",
             md: "40%",
           }}
-          h={600}
-          bg={Colors.lightGrey}
+          // h={600}
+          bg={Colors.DARKTHEME}
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
@@ -57,7 +57,7 @@ function Login() {
                 <Button
                   bg={Colors.THEMEBUTTON}
                   color={Colors.WHITE}
-                  _hover={{bg:Colors.THEMEBUTTON}}
+                  _hover={{ bg: Colors.THEMEBUTTON }}
                   w={270}
                   p={3}
                   borderRadius={8}
@@ -91,8 +91,7 @@ function Login() {
             base: "0%",
             md: "60%",
           }}
-        //   h={600}
-          bg={Colors.THEMEBUTTON}
+          bgGradient="linear(to-b, #30362f, #4d5c3e)"
           display={{
             base: "none",
             md: "inline-flex",
@@ -101,6 +100,9 @@ function Login() {
           alignItems={"center"}
         >
           <Icon as={App_Icons.LOGO} color={Colors.WHITE} fontSize={100} />
+          <Text mt={6} ml={1} fontSize={{ base: 25, md: 30 }} fontWeight="bold">
+            Plant Palace
+          </Text>
         </Box>
       </HStack>
     </>
