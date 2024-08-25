@@ -8,6 +8,7 @@ import DetailPage from "../pages/DetailPage";
 import About from "../pages/About";
 import Login from "../pages/Login";
 import NotFound from "../pages/NotFound";
+import Feedback from "../pages/Feedback";
 
 const AppRoutes = () => {
   return (
@@ -19,6 +20,7 @@ const AppRoutes = () => {
           <Route path="/plant-palace/explore-plants" element={<Shop />} />
           <Route path="/plant-palace/:category" element={<Shop />} />
           <Route path="/plant-palace/contact-us" element={<Contact />} />
+          <Route path="/plant-palace/feedback" element={<Feedback />} />
           <Route path="/plant-palace/detail/:category/:id" element={<DetailPage />} />
         </Route>
         <Route path="/plant-palace/login" element={<Login />} />
