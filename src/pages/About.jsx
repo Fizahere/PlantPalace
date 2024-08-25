@@ -60,9 +60,7 @@ function About() {
               color={"#76925a"}
             >
               PlantPalace is your go-to destination for exploring and caring for
-              a wide variety of plants. Discover detailed information on indoor
-              and outdoor plants, including care tips, images, and common
-              problems.{" "}
+              a wide variety of plants.
             </Text>
           </Box>
         </Box>
@@ -85,7 +83,7 @@ function About() {
               md: "20px",
             }}
             p={{
-              base: "20px",
+              base: "40px",
             }}
           >
             PlantPalace offers a comprehensive online nursery experience,

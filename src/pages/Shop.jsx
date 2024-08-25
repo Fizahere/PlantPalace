@@ -80,8 +80,8 @@ const Shop = () => {
           borderBottom={"1px solid grey"}
           justifyContent={"space-between"}
         >
-          <Heading>{categoryData} plants</Heading>
-          <Flex>
+          <Heading fontSize={{base:'20px',md:'30px'}}>{categoryData} plants</Heading>
+          <Flex flexDirection={{base:'column',md:'row'}}>
             <InputGroup display={"flex"} justifyContent={"space-between"}>
               <Input
                 borderRadius={10}
@@ -94,7 +94,7 @@ const Shop = () => {
                 <Icon as={App_Icons.SEARCH} color={"grey"} fontSize={20} />
               </InputRightElement>
             </InputGroup>
-            <Box ml={4}>
+            <Box ml={4} mt={{base:2,md:0}}>
               <Menu>
                 <MenuButton
                   as={Button}
