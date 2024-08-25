@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Flex,
@@ -13,6 +13,24 @@ import { Colors } from "../assets/constants/colors";
 import { App_Icons } from "../assets/constants/icons";
 
 const Contact = () => {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const [error, setError] = useState("");
+
+  const onClickHandler = () => {
+    if (!email || !message) {
+      setError("fill the fields!");
+      return;
+    }
+    if (!emailRegex.test(email)) {
+      setError("Invalid email!");
+      return;
+    }
+    setError("");
+    navigate("/plant-palace/contact-us");
+  };
+
   return (
     <>
       <Box mt={6}>
@@ -82,7 +100,12 @@ const Contact = () => {
                 />
                 Your Email:
               </Text>
-              <Input placeholder="email**" />
+              <Input
+                placeholder="email**"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
             </Box>
             <Box py={4}>
               <Text fontWeight={"bold"}>
@@ -95,9 +118,25 @@ const Contact = () => {
                 />
                 Message:
               </Text>
-              <Textarea placeholder={"message**"}></Textarea>
+              <Textarea
+                placeholder={"message**"}
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                }}
+              ></Textarea>
             </Box>
-            <Button width={'100%'} color={Colors.WHITE} _hover={{bg:Colors.THEMEBUTTON}} bg={Colors.THEMEBUTTON}>Send</Button>
+            <Text mr={7} mb={4} color={"red"}>
+              {error && error}
+            </Text>
+            <Button
+              onClick={onClickHandler}
+              width={"100%"}
+              color={Colors.WHITE}
+              _hover={{ bg: Colors.THEMEBUTTON }}
+              bg={Colors.THEMEBUTTON}
+            >
+              Send
+            </Button>
           </Box>
         </Flex>
         <Box

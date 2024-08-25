@@ -17,6 +17,19 @@ import { App_Icons } from "../assets/constants/icons";
 
 const Feedback = () => {
   const [sliderValue, setSliderValue] = useState(3);
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+
+  const onClickHandler = () => {
+    if (!message) {
+      setError("fill the fields!");
+      return;
+    }
+
+    setError("");
+    navigate("/plant-palace/feedback");
+  };
+
   const emojis = [
     {
       icon: App_Icons.SAD,
@@ -110,14 +123,21 @@ const Feedback = () => {
               borderRadius={"10px"}
               h={140}
               mt={5}
+              onChange={(e) => {
+                setMessage(e.target.value);
+              }}
               placeholder="Add a comment..."
             ></Textarea>
+            <Text mr={7} my={2} color={"red"}>
+              {error && error}
+            </Text>
             <Button
-            color={Colors.WHITE}
+              color={Colors.WHITE}
               bgGradient="linear(to-r, #30362f, #4d5c3e)"
-              my={6}
-              _hover={{bg:Colors.THEMEBUTTON}}
+              mb={6}
+              _hover={{ bg: Colors.THEMEBUTTON }}
               width={"100%"}
+              onClick={onClickHandler}
             >
               Submit Now
             </Button>
