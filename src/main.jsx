@@ -6,7 +6,6 @@ import { ChakraProvider, ColorModeProvider } from "@chakra-ui/react";
 import theme from "./assets/theme/theme.js";
 
 createRoot(document.getElementById("root")).render(
-  // <StrictMode>
   <ChakraProvider theme={theme}>
     <ColorModeProvider
       options={{ initialColorMode: "light", useSystemColorMode: false }}
@@ -14,5 +13,4 @@ createRoot(document.getElementById("root")).render(
       <App />
     </ColorModeProvider>
   </ChakraProvider>
-  // </StrictMode>,
 );

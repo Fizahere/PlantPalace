@@ -7,21 +7,20 @@ import {
   SimpleGrid,
   Flex,
   Button,
-  Skeleton,
 } from "@chakra-ui/react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Colors } from "../assets/constants/colors";
 import plantData from "../data/PlantsData.json";
 import { imageMap } from "../assets/constants/images";
 
 function DetailPage() {
   const { category: catData, id: dataId } = useParams();
-  const [quantity, setQuantity] = useState(1);
   const categoryData = plantData.plants[catData];
   let data = [];
   if (categoryData) {
     data = categoryData.find((plant) => plant.id.toString() === dataId);
   }
+  const [quantity, setQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(data.price);
   const imageSrc = imageMap[data.image];
   return (
@@ -76,8 +75,9 @@ function DetailPage() {
                   </Text>
                   <Button
                     onClick={() => {
-                      setQuantity(quantity + 1);
-                      setTotalPrice(totalPrice * quantity);
+                      const newQuantity = quantity + 1;
+                      setQuantity(newQuantity);
+                      setTotalPrice(data.price * newQuantity);
                     }}
                   >
                     +
@@ -87,8 +87,9 @@ function DetailPage() {
                   </Text>
                   <Button
                     onClick={() => {
-                      setQuantity(quantity != 1 ? quantity - 1 : 1);
-                      // setTotalPrice(data.price * quantity);
+                      const newQuantity = quantity !== 1 ? quantity - 1 : 1;
+                      setQuantity(newQuantity);
+                      setTotalPrice(data.price * newQuantity);
                     }}
                   >
                     -

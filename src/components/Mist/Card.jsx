@@ -81,17 +81,3 @@ function CustomCard(props) {
 }
 
 export default CustomCard;
-// "scientificName": "Sansevieria trifasciata",
-// "careInstructions": "Water sparingly. Tolerates low light.",
-// "image": ["/src/assets/images/snakePlant1.jpg","/src/assets/images/snakePlant2.jpg"],
-// "description": "Known for its upright, sword-like leaves and air-purifying qualities.",
-// "humidity  const { image } = singlePlant;
-// {image.length >=1 ? image.map((singleImage)=>(
-//     <Image
-//       src={singleImage}
-//       alt={'image_thumbnail_path'}
-//       borderRadius="md"
-//       width={"100%"}
-//       height={{base:'auto',md:'auto'}}
-//     />
-//   )):null}its not dislaying images

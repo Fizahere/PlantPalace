@@ -5,14 +5,11 @@ import {
   Box,
   Text,
   SimpleGrid,
-  VStack,
 } from "@chakra-ui/react";
 import plant5 from "../assets/images/plant5.jpg";
 import plant2 from "../assets/images/plant2.jpg";
 import about2 from "../assets/images/about2.jpeg";
 import about from "../assets/images/about.jpg";
-import { Colors } from "../assets/constants/colors";
-// import friend from '../assets/images/friend.jpeg'
 
 function About() {
   return (
@@ -20,7 +17,6 @@ function About() {
       <Box>
         <Box position={"relative"}>
           <Box
-            // as="video"
             width="100%"
             height={{
               base: "70h",
