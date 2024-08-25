@@ -3,8 +3,8 @@ import MainLayout from "./Layout/MainLayout";
 import Shop from "./pages/Shop";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { BrowserRouter } from "react-router-dom";
-import AppRoutes from "./routes/appRoutes";
 
+import AppRoutes from "./routes/AppRoutes";
 function App() {
   const queryClient = new QueryClient({
     defaultOptions: {
