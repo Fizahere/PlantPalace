@@ -69,7 +69,7 @@ function CustomCard(props) {
                 color: "",
               }}
               fontSize={{ base: "12px", md: "1xl" }}
-              onClick={() => navigate(`/plant-palace/detail/${categoryName}/${id}`)}
+              onClick={() => navigate(`/plant-palace/detail/${categoryName||category}/${id}`)}
             >
               Show more
             </Button>

@@ -59,7 +59,7 @@ const Shop = () => {
     const searchValue = event.target.value.toLowerCase();
     const data = categoryData
       ? plantData.plants[categoryData]
-      : plantData.plants["indoor"];
+      : Object.values(plantData.plants).flat()
 
     const filtered = data.filter((plant) =>
       plant.name.toLowerCase().includes(searchValue)
@@ -141,7 +141,7 @@ const Shop = () => {
               ? filteredData
               : categoryData
               ? plantData.plants[categoryData]
-              : plantData.plants["indoor"]
+              : Object.values(plantData.plants).flat()
             ).map((singlePlant, index) => (
               <CustomCard
                 key={index}

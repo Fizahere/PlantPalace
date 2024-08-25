@@ -5,6 +5,7 @@
         "id": "1",
         "name": "Spider Plant",
         "price": "203",
+        "category":"indoor",
         "scientificName": "Chlorophytum comosum",
         "careInstructions": "Water once a week. Prefers indirect sunlight.",
         "image": "spiderPlant1",
@@ -20,6 +21,7 @@
         "id": "2",
         "name": "Snake Plant",
         "price": "104",
+        "category":"indoor",
         "scientificName": "Sansevieria trifasciata",
         "careInstructions": "Water sparingly. Tolerates low light.",
         "image": "snakePlant2",
@@ -35,6 +37,7 @@
         "id": "3",
         "name": "Peace Lily",
         "price": "120",
+        "category":"indoor",
         "scientificName": "Spathiphyllum",
         "careInstructions": "Water regularly. Prefers low to medium light.",
         "image": "peaceLily1",
@@ -50,6 +53,7 @@
         "id": "4",
         "name": "ZZ Plant",
         "price": "250",
+        "category":"indoor",
         "scientificName": "Zamioculcas zamiifolia",
         "careInstructions": "Water when soil is dry. Thrives in low light.",
         "image": "zzPlant",
@@ -65,6 +69,7 @@
         "id": "5",
         "name": "Pothos",
         "price": "140",
+        "category":"indoor",
         "scientificName": "Epipremnum aureum",
         "careInstructions": "Water when the top inch of soil is dry. Prefers indirect light.",
         "image": "photosPlant",
@@ -82,6 +87,7 @@
         "id": "6",
         "name": "Rose",
         "price": "434",
+        "category":"outdoor",
         "scientificName": "Rosa",
         "careInstructions": "Water regularly. Needs full sun.",
         "image": "rosePlant",
@@ -97,6 +103,7 @@
         "id": "7",
         "name": "Tulip",
         "price": "544",
+        "category":"outdoor",
         "scientificName": "Tulipa",
         "careInstructions": "Water moderately. Prefers cool weather.",
         "image": "tulipPlant",
@@ -112,6 +119,7 @@
         "id": "8",
         "name": "Lavender",
         "price": "560",
+        "category":"outdoor",
         "scientificName": "Lavandula",
         "careInstructions": "Water when dry. Prefers full sun.",
         "image": "lavenderPlant",
@@ -127,6 +135,7 @@
         "id": "9",
         "name": "Hydrangea",
         "price": "205",
+        "category":"outdoor",
         "scientificName": "Hydrangea macrophylla",
         "careInstructions": "Water regularly. Prefers partial to full sun.",
         "image": "hydrangeaPlant",
@@ -142,6 +151,7 @@
         "id": "10",
         "name": "Sunflower",
         "price": "210",
+        "category":"outdoor",
         "scientificName": "Helianthus annuus",
         "careInstructions": "Water deeply. Prefers full sun.",
         "image": "sunflowerPlant",
@@ -159,6 +169,7 @@
         "id": "11",
         "name": "Aloe Vera",
         "price": "270",
+        "category":"succulents",
         "scientificName": "Aloe barbadensis",
         "careInstructions": "Water when dry. Prefers bright, indirect light.",
         "image": "aloeveraPlant",
@@ -174,6 +185,7 @@
         "id": "12",
         "name": "Echeveria",
         "price": "126",
+        "category":"succulents",
         "scientificName": "Echeveria elegans",
         "careInstructions": "Water when soil is dry. Needs bright light.",
         "image": "echeveriaPlant",
@@ -189,6 +201,7 @@
         "id": "13",
         "name": "Jade Plant",
         "price": "790",
+        "category":"succulents",
         "scientificName": "Crassula ovata",
         "careInstructions": "Water when the soil is dry. Prefers bright light.",
         "image": "jadePlant",
@@ -204,6 +217,7 @@
         "id": "14",
         "name": "Zebra Cactus",
         "price": "343",
+        "category":"succulents",
         "scientificName": "Haworthia fasciata",
         "careInstructions": "Water sparingly. Thrives in bright light.",
         "image": "zebracactusPlant",
@@ -219,6 +233,7 @@
         "id": "15",
         "name": "Burro's Tail",
         "price": "560",
+        "category":"succulents",
         "scientificName": "Sedum morganianum",
         "careInstructions": "Water when dry. Prefers bright light.",
         "image": "brotailPlant",
@@ -236,6 +251,7 @@
         "id": "10",
         "name": "Daisy",
         "price": "300",
+        "category":"flowering-shrubs",
         "scientificName": "Bellis perennis",
         "careInstructions": "Water regularly. Prefers full sun to partial shade.",
         "image": "daisyPlant",
@@ -251,6 +267,7 @@
         "id": "17",
         "name": "Azalea",
         "price": "170",
+        "category":"flowering-shrubs",
         "scientificName": "Rhododendron",
         "careInstructions": "Water regularly. Prefers acidic soil and partial shade.",
         "image": "azleaPlant",
@@ -266,6 +283,7 @@
         "id": "18",
         "name": "Lilac",
         "price": "560",
+        "category":"flowering-shrubs",
         "scientificName": "Syringa vulgaris",
         "careInstructions": "Water during dry periods. Prefers full sun.",
         "image": "lilacPlant",
@@ -281,6 +299,7 @@
         "id": "19",
         "name": "Camellia",
         "price": "787",
+        "category":"flowering-shrubs",
         "scientificName": "Camellia japonica",
         "careInstructions": "Water regularly. Prefers acidic soil and partial shade.",
         "image": "camaliaPlant",
@@ -296,6 +315,7 @@
         "id": "20",
         "name": "Forsythia",
         "price": "455",
+        "category":"flowering-shrubs",
         "scientificName": "Forsythia x intermedia",
         "careInstructions": "Water during dry spells. Prefers full sun.",
         "image": "forysthiaPlant",
@@ -339,7 +359,7 @@
           "Black spot",
           "Powdery mildew"
         ],
-        "category": "Outdoor"
+        "category": "outdoor"
       },
       {
         "id": "3",
@@ -355,7 +375,7 @@
           "Leaf spots",
           "Pests"
         ],
-        "category": "Succulents"
+        "category": "succulents"
       },
       {
         "id": "4",
@@ -371,7 +391,7 @@
           "Leaf drop",
           "Powdery mildew"
         ],
-        "category": "Flowering Shrubs"
+        "category": "flowering-shrubs"
       },
       {
         "id": "5",
@@ -387,7 +407,7 @@
           "Root rot",
           "Pests"
         ],
-        "category": "Indoor"
+        "category": "indoor"
       },
       {
         "id": "6",
@@ -403,7 +423,7 @@
           "Leaf drop",
           "Mealybugs"
         ],
-        "category": "Succulents"
+        "category": "succulents"
       }
     ],
     "herbs": [
@@ -411,6 +431,7 @@
         "id": "1",
         "name": "Basil",
         "price": "453",
+        "category": "herbs",
         "scientificName": "Ocimum basilicum",
         "careInstructions": "Water regularly. Prefers full sun.",
         "image": "basilPlant",
@@ -426,6 +447,7 @@
         "id": "2",
         "name": "Mint",
         "price": "254",
+        "category": "herbs",
         "scientificName": "Mentha",
         "careInstructions": "Keep soil moist. Prefers partial shade.",
         "image": "mintPlant",
@@ -441,6 +463,7 @@
         "id": "3",
         "name": "Rosemary",
         "price": "340",
+        "category": "herbs",
         "scientificName": "Rosmarinus officinalis",
         "careInstructions": "Water sparingly. Prefers full sun.",
         "image": "rosemaryPlant",
@@ -456,6 +479,7 @@
         "id": "4",
         "name": "Thyme",
         "price": "200",
+        "category": "herbs",
         "scientificName": "Thymus vulgaris",
         "careInstructions": "Water regularly but do not overwater. Prefers full sun.",
         "image": "thymePlant",
@@ -471,6 +495,7 @@
         "id": "5",
         "name": "Parsley",
         "price": "657",
+        "category": "herbs",
         "scientificName": "Petroselinum crispum",
         "careInstructions": "Keep soil evenly moist. Prefers partial shade to full sun.",
         "image": "parsleyPlant",
