@@ -23,7 +23,8 @@ function Navbar() {
   const cartDrawer = useDisclosure();
   const [user, setUser] = useState(localStorage.getItem("user"));
   // const navigate=useNavigate()
-
+  const cart = localStorage.getItem('cart');
+  const cartCount = cart ? JSON.parse(cart).length : 0;
   return (
     <>
       <Box>
@@ -129,6 +130,7 @@ function Navbar() {
                 </Text>
               </Link>
             )}
+            <Text>{cartCount}</Text>
             <IconButton
               icon={<Icon as={App_Icons.CART} fontSize={22} />}
               onClick={cartDrawer.onOpen}
