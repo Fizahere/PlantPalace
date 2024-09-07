@@ -20,8 +20,10 @@ import {
 import { Colors } from "../assets/constants/colors";
 import { imageMap } from "../assets/constants/images";
 import { App_Icons } from "../assets/constants/icons";
+import { useNavigate } from "react-router-dom";
 
 const Cart = ({ disclosure }) => {
+  const navigate = useNavigate()
   const btnRef = React.useRef();
   const [cartItems, setCartItems] = React.useState(
     JSON.parse(localStorage.getItem("cart")) || []
@@ -32,7 +34,17 @@ const Cart = ({ disclosure }) => {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
     setCartItems(updatedCart);
   };
-
+  const checkoutHandler = () => {
+    const user = localStorage.getItem('user')
+    if (!user) {
+      navigate('/plant-palace/login')
+    }
+    else {
+      localStorage.removeItem('cart');
+      location.href = '/'
+      alert('checkout!')
+    }
+  }
   return (
     <>
       <Drawer
@@ -61,7 +73,7 @@ const Cart = ({ disclosure }) => {
                     <IconButton
                       aria-label="Delete item"
                       icon={<App_Icons.CLOSE />}
-                    ml={'190px'}
+                      ml={'190px'}
                       bg={"transparent"}
                       onClick={() => deleteItem(item.id)}
                     />
@@ -99,6 +111,7 @@ const Cart = ({ disclosure }) => {
               width={"100%"}
               bgGradient="linear(to-r, #30362f, #4d5c3e)"
               color={Colors.WHITE}
+              onClick={checkoutHandler}
             >
               Checkout
             </Button>
