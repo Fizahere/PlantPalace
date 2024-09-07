@@ -130,6 +130,13 @@ function Navbar() {
                 </Text>
               </Link>
             )}
+               <Divider
+              orientation="vertical"
+              borderColor="inherit"
+              height={"20px"}
+              borderWidth="0.5px"
+              mr={2}
+            />
             <Text>{cartCount}</Text>
             <IconButton
               icon={<Icon as={App_Icons.CART} fontSize={22} />}
