@@ -28,6 +28,7 @@ function Footer() {
               borderRadius={"50%"}
               p={"8px"}
               fontSize={"40px"}
+              color={'#ff66cc'}
               as={App_Icons.INSTAGRAM}
             />
           </Link>
@@ -37,6 +38,7 @@ function Footer() {
               borderRadius={"50%"}
               p={"8px"}
               fontSize={"40px"}
+              color={Colors.BLUE}
               as={App_Icons.FACEBOOK}
             />
           </Link>
@@ -46,6 +48,7 @@ function Footer() {
               borderRadius={"50%"}
               p={"6px"}
               fontSize={"40px"}
+              color={'red'}
               as={App_Icons.MAIL}
             />
           </Link>
