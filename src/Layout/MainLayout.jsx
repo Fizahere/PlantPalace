@@ -15,7 +15,9 @@ const MainLayout = () => {
       >
         <Box px={{ base: 10, md: 20 }}>
           <Navbar />
+          <Box mt={20}>
           <Outlet />
+          </Box>
           <Footer />
         </Box>
       </Box>

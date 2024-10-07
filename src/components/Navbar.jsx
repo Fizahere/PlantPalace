@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { App_Icons } from "../assets/constants/icons";
 import { Colors } from "../assets/constants/colors";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Cart from "../pages/Cart";
 
 function Navbar() {
@@ -22,12 +22,22 @@ function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const cartDrawer = useDisclosure();
   const [user, setUser] = useState(localStorage.getItem("user"));
-  // const navigate=useNavigate()
-  const cart = localStorage.getItem('cart');
+  const cart = localStorage.getItem("cart");
   const cartCount = cart ? JSON.parse(cart).length : 0;
+
+  const location = useLocation();
+
   return (
     <>
-      <Box>
+      <Box
+        position="fixed"
+        top={0}
+        left={0}
+        right={0}
+        bg={colorMode === "light" ? "white" : "gray.800"}
+        zIndex={999}
+        boxShadow="sm"
+      >
         <Flex h={16} alignItems="center" justifyContent="space-between">
           <IconButton
             size="md"
@@ -43,7 +53,7 @@ function Navbar() {
             onClick={isOpen ? onClose : onOpen}
           />
           <Link to={"/"}>
-            <Flex>
+            <Flex ml={2}>
               <Icon as={App_Icons.LOGO} fontSize={{ base: 20, md: 25 }} />{" "}
               <Text
                 mt={1}
@@ -69,6 +79,10 @@ function Navbar() {
                 rounded="md"
                 _hover={{ textDecoration: "none" }}
                 to="/"
+                style={{
+                  borderBottom:
+                    location.pathname === "/" ? "2px solid #4d5c3e" : "none",
+                }}
               >
                 Home
               </Link>
@@ -78,6 +92,12 @@ function Navbar() {
                 rounded="md"
                 _hover={{ textDecoration: "none" }}
                 to="/plant-palace/about-us"
+                style={{
+                  borderBottom:
+                    location.pathname === "/plant-palace/about-us"
+                      ? "2px solid #4d5c3e"
+                      : "none",
+                }}
               >
                 About
               </Link>
@@ -87,6 +107,12 @@ function Navbar() {
                 rounded="md"
                 _hover={{ textDecoration: "none" }}
                 to={"/plant-palace/feedback"}
+                style={{
+                  borderBottom:
+                    location.pathname === "/plant-palace/feedback"
+                      ? "2px solid #4d5c3e"
+                      : "none",
+                }}
               >
                 Feedback
               </Link>
@@ -96,6 +122,12 @@ function Navbar() {
                 rounded="md"
                 _hover={{ textDecoration: "none" }}
                 to="/plant-palace/contact-us"
+                style={{
+                  borderBottom:
+                    location.pathname === "/plant-palace/contact-us"
+                      ? "2px solid #4d5c3e"
+                      : "none",
+                }}
               >
                 Contact
               </Link>
@@ -110,7 +142,7 @@ function Navbar() {
                 fontSize={"15px"}
                 fontWeight={"bold"}
                 onClick={() => {
-                  if (confirm("are you sure?")) {
+                  if (confirm("Are you sure?")) {
                     localStorage.removeItem("user");
                     location.href = "/";
                   }
@@ -130,7 +162,7 @@ function Navbar() {
                 </Text>
               </Link>
             )}
-               <Divider
+            <Divider
               orientation="vertical"
               borderColor="inherit"
               height={"20px"}
